@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnh7a8cnv6wom"]
+
+[ext_resource type="Script" path="res://escena_del_guego.gd" id="1_nfi1q"]
+[ext_resource type="Texture2D" uid="uid://davejy527gge0" path="res://assets/Diseño sin título (1).png" id="2_20dle"]
+
+[node name="EscenaDelGuego" type="Node2D"]
+position = Vector2(-6, -4)
+script = ExtResource("1_nfi1q")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(578.5, 329.5)
+scale = Vector2(0.586979, 0.587963)
+texture = ExtResource("2_20dle")
