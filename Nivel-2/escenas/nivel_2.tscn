@@ -1,0 +1,165 @@
+[gd_scene load_steps=29 format=3 uid="uid://bupq32rhgylck"]
+
+[ext_resource type="Script" path="res://Nivel-2/scripts/nivel_2.gd" id="1_opfvc"]
+[ext_resource type="AudioStream" uid="uid://441jcralkavw" path="res://Nivel-2/assets/Musica y sonidos/nivel2.mp3" id="1_rplsf"]
+[ext_resource type="PackedScene" uid="uid://cj51vdn3afk37" path="res://Nivel-1/escenas/Nave.tscn" id="4_ik8or"]
+[ext_resource type="PackedScene" uid="uid://b3xvkavutpbt8" path="res://Nivel-2/escenas/balas_enemigos.tscn" id="5_0qoaj"]
+[ext_resource type="PackedScene" uid="uid://dfwhymo4f0t8s" path="res://Nivel-1/escenas/Meteorito.tscn" id="5_8q7na"]
+[ext_resource type="PackedScene" uid="uid://lj2epfum3qsi" path="res://Nivel-1/escenas/Balas.tscn" id="5_k50hj"]
+[ext_resource type="PackedScene" uid="uid://dsj4ihj5g6sjt" path="res://Nivel-2/escenas/enemigos.tscn" id="5_mny7e"]
+[ext_resource type="PackedScene" uid="uid://ddnuhqyjb0a6m" path="res://Nivel-1/escenas/Explosion.tscn" id="6_7lad4"]
+[ext_resource type="Shader" path="res://Nivel-2/scripts/nivel_2.gdshader" id="6_j6k5m"]
+[ext_resource type="Texture2D" uid="uid://dchxa7ccoktn4" path="res://Nivel-1/assets/imagenes/fondoespacio2.png" id="7_oi6wr"]
+[ext_resource type="PackedScene" uid="uid://bldhqy4b5mxqh" path="res://Nivel-2/escenas/CinematicaNivel2.tscn" id="10_t1gjc"]
+[ext_resource type="PackedScene" uid="uid://dlywjlgpx1n4m" path="res://Nivel-1/escenas/spawn_meteoro.tscn" id="12_n3co2"]
+[ext_resource type="PackedScene" uid="uid://bdevc1gbmhucw" path="res://Nivel-1/escenas/pausa.tscn" id="13_fpbop"]
+[ext_resource type="Script" path="res://Nivel-2/scripts/pausa.gd" id="14_wnd1i"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ghi1x"]
+load_path = "res://.godot/imported/explosions_sprite.png-1f544245d4716d5ea273ed8c50a6f599.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a20hq"]
+atlas = SubResource("CompressedTexture2D_ghi1x")
+region = Rect2(0, 0, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12cm6"]
+atlas = SubResource("CompressedTexture2D_ghi1x")
+region = Rect2(160, 0, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8471x"]
+atlas = SubResource("CompressedTexture2D_ghi1x")
+region = Rect2(320, 0, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2qwhn"]
+atlas = SubResource("CompressedTexture2D_ghi1x")
+region = Rect2(0, 160, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s10vd"]
+atlas = SubResource("CompressedTexture2D_ghi1x")
+region = Rect2(160, 160, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ahfat"]
+atlas = SubResource("CompressedTexture2D_ghi1x")
+region = Rect2(320, 160, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aowqr"]
+atlas = SubResource("CompressedTexture2D_ghi1x")
+region = Rect2(0, 320, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3rlmn"]
+atlas = SubResource("CompressedTexture2D_ghi1x")
+region = Rect2(160, 320, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t526b"]
+atlas = SubResource("CompressedTexture2D_ghi1x")
+region = Rect2(320, 320, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r24en"]
+atlas = SubResource("CompressedTexture2D_ghi1x")
+region = Rect2(0, 480, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gr2ot"]
+atlas = SubResource("CompressedTexture2D_ghi1x")
+region = Rect2(160, 480, 160, 160)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gayto"]
+resource_local_to_scene = true
+resource_name = "explosion"
+animations = [{
+"frames": [{
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_a20hq")
+}, {
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_12cm6")
+}, {
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_8471x")
+}, {
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_2qwhn")
+}, {
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_s10vd")
+}, {
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_ahfat")
+}, {
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_aowqr")
+}, {
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_3rlmn")
+}, {
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_t526b")
+}, {
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_r24en")
+}, {
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_gr2ot")
+}],
+"loop": false,
+"name": &"explosion",
+"speed": 10.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dapq6"]
+shader = ExtResource("6_j6k5m")
+shader_parameter/scroll_speed = 0.4
+
+[node name="nivel_2" type="Node2D"]
+position = Vector2(1, 1)
+script = ExtResource("1_opfvc")
+metadata/_edit_group_ = true
+
+[node name="SpawnEnemigos" type="Timer" parent="."]
+
+[node name="SonidoN2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_rplsf")
+volume_db = -30.0
+autoplay = true
+
+[node name="Nave" parent="." instance=ExtResource("4_ik8or")]
+position = Vector2(592, 546)
+
+[node name="Balas" parent="." instance=ExtResource("5_k50hj")]
+visible = false
+position = Vector2(137, 10)
+
+[node name="BalasEnemigos" parent="." instance=ExtResource("5_0qoaj")]
+visible = false
+
+[node name="Meteorito" parent="." instance=ExtResource("5_8q7na")]
+visible = false
+
+[node name="Enemigos" parent="." groups=["Enemigos"] instance=ExtResource("5_mny7e")]
+visible = false
+position = Vector2(298, 81)
+
+[node name="Explosion" parent="." instance=ExtResource("6_7lad4")]
+visible = false
+sprite_frames = SubResource("SpriteFrames_gayto")
+
+[node name="EscenarioEstrellas" type="ParallaxBackground" parent="."]
+process_mode = 1
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="EscenarioEstrellas"]
+motion_mirroring = Vector2(0, 648)
+
+[node name="Sprite2D" type="Sprite2D" parent="EscenarioEstrellas/ParallaxLayer"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_dapq6")
+position = Vector2(580, 324)
+scale = Vector2(0.611811, 0.676319)
+texture = ExtResource("7_oi6wr")
+
+[node name="CinematicaNivel2" parent="." instance=ExtResource("10_t1gjc")]
+
+[node name="SpawnMeteoro" parent="." instance=ExtResource("12_n3co2")]
+
+[node name="pausa" parent="." instance=ExtResource("13_fpbop")]
+script = ExtResource("14_wnd1i")
+
+[connection signal="timeout" from="SpawnEnemigos" to="Enemigos" method="_on_spawn_enemigos_timeout"]

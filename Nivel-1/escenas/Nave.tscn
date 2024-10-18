@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://cj51vdn3afk37"]
+
+[ext_resource type="Script" path="res://Nivel-1/scripts/Nave.gd" id="1_56c7m"]
+[ext_resource type="Texture2D" uid="uid://c8stx54ke3fft" path="res://Nivel-2/assets/imagenes/NaveDefinitiva.png" id="2_7njyt"]
+[ext_resource type="AudioStream" uid="uid://cclmyn7ge4eip" path="res://Nivel-1/assets/Musica y sonidos/disparoNave.mp3" id="3_eup1o"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p8ksl"]
+radius = 37.0
+height = 110.0
+
+[node name="Nave" type="Area2D" groups=["Naves"]]
+position = Vector2(591, 580)
+script = ExtResource("1_56c7m")
+metadata/_edit_group_ = true
+
+[node name="Nave" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_p8ksl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -6)
+scale = Vector2(0.101389, 0.148449)
+texture = ExtResource("2_7njyt")
+
+[node name="SonidoDisparo" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-1, -53)
+stream = ExtResource("3_eup1o")
+volume_db = -20.0
+
+[node name="SpawnearBala" type="Marker2D" parent="."]
+position = Vector2(0, -57)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
